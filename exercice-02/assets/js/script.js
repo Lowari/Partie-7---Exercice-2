@@ -3,18 +3,18 @@ let colorButton = document.getElementById('buttonColor');
 let zoomButton = document.getElementById('buttonZoom');
 let divMain = document.getElementById('divMain');
 
-getBold = () => {
-    divMain.classList.toggle('font-weight-bold');
+function getBold() {
+    this.classList.toggle('font-weight-bold');
 };
 
-getColor = () => {
-    divMain.classList.toggle('text-danger');
+function getColor() {
+    this.classList.toggle('text-danger');
 };
 
-getZoom = () => {
-    divMain.classList.toggle('zoom');
+function getZoom() {
+    this.classList.toggle('zoom');
 };
 
-boldButton.addEventListener('click', getBold);
-colorButton.addEventListener('click', getColor);
-zoomButton.addEventListener('click', getZoom);
+boldButton.addEventListener('click', getBold.bind(divMain));
+colorButton.addEventListener('click', getColor.bind(divMain));
+zoomButton.addEventListener('click', getZoom.bind(divMain));
